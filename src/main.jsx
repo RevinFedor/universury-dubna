@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import './index.scss';
-import { BrowserRouter } from 'react-router-dom';
+import './app/styles/index.scss';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
+import ThemeProvider from './widgetes/switchTheme/ThemeProvider.jsx';
 
+// добавляет в id root разметку jsx
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-        <BrowserRouter>
+    <ThemeProvider>
+        <HashRouter>
             <App />
-        </BrowserRouter>
-    </React.StrictMode>
+        </HashRouter>
+    </ThemeProvider>
 );
